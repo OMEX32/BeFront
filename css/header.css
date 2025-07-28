@@ -203,7 +203,6 @@ body {
 }
 
 .description {
-    text-align: center !important;
     color: #777 !important;
     font-size: clamp(0.875rem, 2vw, 1rem);
     line-height: 1.6;
@@ -667,7 +666,7 @@ body {
     }
 
     .description {
-        text-align: left;
+        text-align: center !important;
     }
 
     .laptop-container {
