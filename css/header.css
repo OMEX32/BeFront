@@ -6,11 +6,11 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif !important;
-    background: linear-gradient(135deg, #FFFDF0 0%, #FFFDF0 100%) !important;
     min-height: 100vh;
     overflow-x: hidden;
     line-height: 1.6;
     color: #333 !important;
+    background: linear-gradient(135deg, #FFFDF0 0%, #FFFDF0 100%) !important;
 }
 
 /* Container for consistent spacing */
@@ -18,11 +18,13 @@ body {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 1rem;
+    
 }
 
 /* Header */
 .header {
     display: flex;
+
     justify-content: space-between;
     align-items: center;
     padding: 1rem 0;
@@ -159,6 +161,7 @@ body {
     gap: clamp(2rem, 5vw, 4rem);
     padding: clamp(2rem, 8vw, 5rem) 0;
     min-height: calc(100vh - 100px);
+    
 }
 
 .content-left {
@@ -473,35 +476,6 @@ body {
     z-index: -1;
 }
 
-/* Scroll Indicator */
-.scroll-indicator {
-    position: absolute;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: bounce-vertical 2s ease-in-out infinite;
-}
-
-.scroll-arrow {
-    width: 30px;
-    height: 30px;
-    border: 2px solid #ffd700;
-    border-top: none;
-    border-left: none;
-    transform: rotate(45deg);
-}
-
-@keyframes bounce-vertical {
-
-    0%,
-    100% {
-        transform: translate(-50%, 0);
-    }
-
-    50% {
-        transform: translate(-50%, 10px);
-    }
-}
 
 /* Responsive Design - FIXED: Mobile menu and logo positioning */
 @media (max-width: 1024px) {
@@ -812,3 +786,4 @@ body {
     outline-offset: 4px;
     box-shadow: 0 0 0 4px rgba(255, 215, 0, 0.3);
 }
+

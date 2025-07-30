@@ -8,6 +8,7 @@
     <meta name="description"
         content="Professional website development for Belgian businesses. Get online in just 5 days!">
     <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/over-mij.css">
 </head>
 
 <body>
@@ -32,285 +33,108 @@
         </header>
 
         <main class="main-content" id="home">
-            <div class="content-left">
-                <h1 class="main-title">
-                    Websites voor<br>
-                    vakmannen<br>
-                    <span class="highlight" id="cyclingText">Snel<span class="cursor">|</span></span>
-                </h1>
-                <p class="subtitle">The Right Way.</p>
-                <div class="description">
-                    <p>Crafted by a student, designed for local legends.</p>
-                    <p>From sketches to stunning websites in just 5 days.</p>
+                <div class="content-left">
+                    <h1 class="main-title">
+                        Websites voor<br>
+                        vakmannen<br>
+                        <span class="highlight" id="cyclingText">Snel<span class="cursor">|</span></span>
+                    </h1>
+                    <p class="subtitle">The Right Way.</p>
+                    <div class="description">
+                        <p>Crafted by a student, designed for local legends.</p>
+                        <p>From sketches to stunning websites in just 5 days.</p>
+                    </div>
+                    <div class="action-buttons">
+                        <a href="#start" class="primary-btn">
+                            Start Your Website Today 🚀
+                        </a>
+                        <a href="#portfolio" class="secondary-btn">
+                            See My Work
+                        </a>
+                    </div>
                 </div>
-                <div class="action-buttons">
-                    <a href="#start" class="primary-btn">
-                        Start Your Website Today 🚀
-                    </a>
-                    <a href="#portfolio" class="secondary-btn">
-                        See My Work
-                    </a>
-                </div>
-            </div>
 
-            <div class="content-right">
-                <div class="laptop-container">
-                    <div class="floating-circle"></div>
-                    <div class="laptop">
-                        <div class="laptop-screen">
-                            <div class="screen-header">
-                                <div class="screen-dots">
-                                    <div class="dot red"></div>
-                                    <div class="dot yellow"></div>
-                                    <div class="dot green"></div>
+                <div class="content-right">
+                    <div class="laptop-container">
+                        <div class="floating-circle"></div>
+                        <div class="laptop">
+                            <div class="laptop-screen">
+                                <div class="screen-header">
+                                    <div class="screen-dots">
+                                        <div class="dot red"></div>
+                                        <div class="dot yellow"></div>
+                                        <div class="dot green"></div>
+                                    </div>
+                                </div>
+                                <div class="screen-content">
+                                    <div class="content-bar bar-yellow"></div>
+                                    <div class="content-bar bar-gray"></div>
+                                    <div class="content-bar bar-short"></div>
+                                    <div class="content-block"></div>
                                 </div>
                             </div>
-                            <div class="screen-content">
-                                <div class="content-bar bar-yellow"></div>
-                                <div class="content-bar bar-gray"></div>
-                                <div class="content-bar bar-short"></div>
-                                <div class="content-block"></div>
-                            </div>
+                            <div class="laptop-base"></div>
                         </div>
-                        <div class="laptop-base"></div>
+                        <div class="floating-dot"></div>
                     </div>
-                    <div class="floating-dot"></div>
                 </div>
-            </div>
         </main>
 
-        <div class="scroll-indicator" aria-hidden="true">
-            <div class="scroll-arrow"></div>
-        </div>
     </div>
+    <section class="over-mij-section">
+        <!-- Header -->
+        <div class="over-mij-header">
+            <h1 class="over-mij-title">Why Choose <span class="yellow">Me?</span></h1>
+            <p class="over-mij-subtitle">I'm not just another web developer. I'm a student entrepreneur who understands
+                what local businesses really need to succeed online.</p>
+        </div>
 
-    <script>
-        // Mobile menu toggle with enhanced animations
-        const menuToggle = document.querySelector('.menu-toggle');
-        const nav = document.querySelector('.nav');
+        <!-- Cards Grid -->
+        <div class="over-mij-grid">
+            <!-- Card 1: Super-Fast Turnaround -->
+            <div class="over-mij-card">
+                <span class="over-mij-icon">🚀</span>
+                <h3 class="over-mij-card-title">Super-Fast Turnaround</h3>
+                <p class="over-mij-card-subtitle">Within 5 Days</p>
+                <p class="over-mij-description">From concept to launch, your website will be ready faster than you can
+                    say "online presence".</p>
+            </div>
 
-        if (menuToggle && nav) {
-            menuToggle.addEventListener('click', () => {
-                const isActive = nav.classList.contains('active');
+            <!-- Card 2: Mobile-First Magic -->
+            <div class="over-mij-card">
+                <span class="over-mij-icon">📱</span>
+                <h3 class="over-mij-card-title">Mobile-First Magic</h3>
+                <p class="over-mij-card-subtitle">Looks Great Everywhere</p>
+                <p class="over-mij-description">Your customers browse on phones. Your website will shine on every screen
+                    size.</p>
+            </div>
 
-                nav.classList.toggle('active');
-                menuToggle.classList.toggle('active');
-                menuToggle.setAttribute('aria-expanded', !isActive);
+            <!-- Card 3: Websites That Feel Like You -->
+            <div class="over-mij-card">
+                <span class="over-mij-icon">💡</span>
+                <h3 class="over-mij-card-title">Websites That Feel Like You</h3>
+                <p class="over-mij-card-subtitle">Authentic & Personal</p>
+                <p class="over-mij-description">No cookie-cutter templates. Each site reflects your unique business
+                    personality.</p>
+            </div>
 
-                // Add stagger animation to nav items
-                if (!isActive) {
-                    const navItems = nav.querySelectorAll('a');
-                    navItems.forEach((item, index) => {
-                        item.style.opacity = '0';
-                        item.style.transform = 'translateX(30px) scale(0.9)';
-                        setTimeout(() => {
-                            item.style.transition = 'all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1)';
-                            item.style.opacity = '1';
-                            item.style.transform = 'translateX(0) scale(1)';
-                        }, index * 80 + 200);
-                    });
-                }
-            });
+            <!-- Card 4: No Agency Prices -->
+            <div class="over-mij-card">
+                <span class="over-mij-icon">💰</span>
+                <h3 class="over-mij-card-title">No Agency Prices</h3>
+                <p class="over-mij-card-subtitle">Student-Friendly Rates</p>
+                <p class="over-mij-description">Get professional results without the corporate markup. Quality that fits
+                    your budget.</p>
+            </div>
+        </div>
 
-            // Close mobile menu when clicking outside
-            document.addEventListener('click', (e) => {
-                if (!nav.contains(e.target) && !menuToggle.contains(e.target) && nav.classList.contains('active')) {
-                    nav.classList.remove('active');
-                    menuToggle.classList.remove('active');
-                    menuToggle.setAttribute('aria-expanded', 'false');
-                }
-            });
+        <!-- CTA Button -->
+        <a href="#contact" class="over-mij-button">Ready to Get Started? Let's Talk!</a>
+    </section>
 
-            // Close mobile menu when clicking on a link
-            nav.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    nav.classList.remove('active');
-                    menuToggle.classList.remove('active');
-                    menuToggle.setAttribute('aria-expanded', 'false');
-                });
-            });
-        }
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const target = document.querySelector(targetId);
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-
-                    // Update URL without jumping
-                    if (targetId !== '#') {
-                        history.pushState(null, null, targetId);
-                    }
-                }
-            });
-        });
-
-        // Interactive content bars with improved touch support
-        const contentBars = document.querySelectorAll('.content-bar');
-        contentBars.forEach(bar => {
-            const handleInteraction = () => {
-                bar.style.transform = 'scaleX(1.1)';
-                bar.style.transition = 'transform 0.3s ease';
-            };
-
-            const handleInteractionEnd = () => {
-                bar.style.transform = 'scaleX(1)';
-            };
-
-            bar.addEventListener('mouseenter', handleInteraction);
-            bar.addEventListener('mouseleave', handleInteractionEnd);
-            bar.addEventListener('touchstart', handleInteraction);
-            bar.addEventListener('touchend', handleInteractionEnd);
-        });
-
-        // Enhanced entrance animations with intersection observer
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Apply entrance animations to elements
-        window.addEventListener('load', () => {
-            const elements = document.querySelectorAll('.content-left > *, .laptop-container');
-            elements.forEach((el, index) => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(30px)';
-                el.style.transition = `all 0.6s ease ${index * 0.1}s`;
-
-                setTimeout(() => {
-                    observer.observe(el);
-                }, 100);
-            });
-        });
-
-        // Interactive laptop screen with color cycling
-        const screenContent = document.querySelector('.screen-content');
-        if (screenContent) {
-            let colorIndex = 0;
-            const colors = [
-                'linear-gradient(90deg, #ffd700, #ffed4e)',
-                'linear-gradient(90deg, #ff6b6b, #ff8e8e)',
-                'linear-gradient(90deg, #6bcf7f, #8ed99f)',
-                'linear-gradient(90deg, #6bb6ff, #8ec5ff)',
-                'linear-gradient(90deg, #da4cff, #e066ff)'
-            ];
-
-            screenContent.addEventListener('click', () => {
-                const bars = screenContent.querySelectorAll('.content-bar:not(.bar-gray)');
-                colorIndex = (colorIndex + 1) % colors.length;
-
-                bars.forEach(bar => {
-                    bar.style.background = colors[colorIndex];
-                });
-
-                const contentBlock = screenContent.querySelector('.content-block');
-                if (contentBlock) {
-                    contentBlock.style.background = colors[colorIndex];
-                }
-            });
-        }
-
-        // Keyboard navigation support
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && nav && nav.classList.contains('active')) {
-                nav.classList.remove('active');
-                menuToggle.classList.remove('active');
-                menuToggle.setAttribute('aria-expanded', 'false');
-                menuToggle.focus();
-            }
-        });
-
-        // Performance optimization: disable animations on low-end devices
-        if (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 2) {
-            document.querySelectorAll('*').forEach(el => {
-                el.style.animation = 'none';
-            });
-        }
-    </script>
-
-    <script>
-        const cyclingTextElement = document.getElementById('cyclingText');
-        const words = ['Snel', 'Professioneel', 'Betaalbaar'];
-        let currentIndex = 0;
-        let isTyping = false;
-
-        function typeWord(word) {
-            return new Promise((resolve) => {
-                isTyping = true;
-                let currentText = '';
-                let charIndex = 0;
-
-                const typeInterval = setInterval(() => {
-                    currentText += word[charIndex];
-                    cyclingTextElement.innerHTML = currentText + '<span class="cursor">|</span>';
-                    charIndex++;
-
-                    if (charIndex === word.length) {
-                        clearInterval(typeInterval);
-                        isTyping = false;
-                        resolve();
-                    }
-                }, 100); // 100ms per character
-            });
-        }
-
-        function eraseWord() {
-            return new Promise((resolve) => {
-                isTyping = true;
-                let currentText = words[currentIndex];
-
-                const eraseInterval = setInterval(() => {
-                    currentText = currentText.slice(0, -1);
-                    cyclingTextElement.innerHTML = currentText + '<span class="cursor">|</span>';
-
-                    if (currentText === '') {
-                        clearInterval(eraseInterval);
-                        isTyping = false;
-                        resolve();
-                    }
-                }, 50); // 50ms per character (faster erase)
-            });
-        }
-
-        async function cycleWords() {
-            while (true) {
-                // Wait 3 seconds before starting to erase
-                await new Promise(resolve => setTimeout(resolve, 3000));
-
-                // Erase current word
-                await eraseWord();
-
-                // Move to next word
-                currentIndex = (currentIndex + 1) % words.length;
-
-                // Wait a bit before typing new word
-                await new Promise(resolve => setTimeout(resolve, 200));
-
-                // Type new word
-                await typeWord(words[currentIndex]);
-            }
-        }
-
-        // Start the cycle after page load
-        setTimeout(() => {
-            cycleWords();
-        }, 3000);
-    </script>
+    <script src="js/nav.js"></script>
+    <script src="js/hero-tekst.js"></script>
+    <script src="js/over-mij-animatie.js"></script>
 </body>
 
 </html>
