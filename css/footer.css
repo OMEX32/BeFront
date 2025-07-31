@@ -1,0 +1,119 @@
+ /* Step 1: Main footer container with exact black background */
+ .footer {
+     background: #000000;
+     color: #ffffff;
+     padding: 48px 24px;
+ }
+
+ /* Step 2: Container with three-column grid layout */
+ .footer-container {
+     max-width: 1200px;
+     margin: 0 auto;
+     display: grid;
+     grid-template-columns: 2fr 1fr 1fr;
+     gap: 120px;
+     align-items: flex-start;
+ }
+
+ /* Step 3: Left section brand styling */
+ .footer-brand {
+     font-size: 20px;
+     font-weight: 600;
+     color: #ffffff;
+     margin-bottom: 16px;
+     line-height: 1.2;
+ }
+
+ .brand-highlight {
+     color: #FFD700;
+ }
+
+ .footer-description {
+     color: #888888;
+     font-size: 14px;
+     line-height: 1.6;
+     max-width: 340px;
+ }
+
+ /* Step 4: Middle section - Quick Links styling */
+ .section-title {
+     color: #FFD700;
+     font-size: 16px;
+     font-weight: 600;
+     margin-bottom: 20px;
+ }
+
+ .quick-links {
+     list-style: none;
+ }
+
+ .quick-links li {
+     margin-bottom: 12px;
+ }
+
+ .quick-links a {
+     color: #888888;
+     text-decoration: none;
+     font-size: 14px;
+     transition: color 0.3s ease;
+ }
+
+ .quick-links a:hover {
+     color: #FFD700;
+ }
+
+ /* Step 5: Right section - Contact styling */
+ .contact-info {
+     display: flex;
+     flex-direction: column;
+     gap: 12px;
+ }
+
+ .contact-item {
+     display: flex;
+     align-items: center;
+     gap: 12px;
+ }
+
+ .contact-icon {
+     color: #888888;
+     font-size: 14px;
+     width: 16px;
+     text-align: center;
+ }
+
+ .contact-text {
+     color: #888888;
+     font-size: 14px;
+ }
+
+ /* Step 6: Responsive design */
+ @media (max-width: 768px) {
+     .footer {
+         padding: 32px 16px;
+     }
+
+     .footer-container {
+         grid-template-columns: 1fr;
+         gap: 32px;
+     }
+
+     .footer-description {
+         max-width: none;
+     }
+ }
+
+ @media (max-width: 480px) {
+     .footer-brand {
+         font-size: 18px;
+     }
+
+     .section-title {
+         font-size: 14px;
+     }
+
+     .quick-links a,
+     .contact-text {
+         font-size: 13px;
+     }
+ }

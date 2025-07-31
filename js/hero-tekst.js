@@ -1,67 +1,56 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const cyclingTextElement = document.getElementById('cyclingText');
+    const words = ['Snel', 'Professioneel', 'Betaalbaar'];
+    let currentIndex = 0;
 
-const cyclingTextElement = document.getElementById('cyclingText');
-const words = ['Snel', 'Professioneel', 'Betaalbaar'];
-let currentIndex = 0;
-let isTyping = false;
+    if (!cyclingTextElement) return;
 
-function typeWord(word) {
-    return new Promise((resolve) => {
-        isTyping = true;
-        let currentText = '';
-        let charIndex = 0;
+    function typeWord(word) {
+        return new Promise((resolve) => {
+            let currentText = '';
+            let charIndex = 0;
 
-        const typeInterval = setInterval(() => {
-            currentText += word[charIndex];
-            cyclingTextElement.innerHTML = currentText + '<span class="cursor">|</span>';
-            charIndex++;
+            const typeInterval = setInterval(() => {
+                currentText += word[charIndex];
+                cyclingTextElement.innerHTML = currentText + '<span class="cursor">|</span>';
+                charIndex++;
 
-            if (charIndex === word.length) {
-                clearInterval(typeInterval);
-                isTyping = false;
-                resolve();
-            }
-        }, 100); // 100ms per character
-    });
-}
-
-function eraseWord() {
-    return new Promise((resolve) => {
-        isTyping = true;
-        let currentText = words[currentIndex];
-
-        const eraseInterval = setInterval(() => {
-            currentText = currentText.slice(0, -1);
-            cyclingTextElement.innerHTML = currentText + '<span class="cursor">|</span>';
-
-            if (currentText === '') {
-                clearInterval(eraseInterval);
-                isTyping = false;
-                resolve();
-            }
-        }, 50); // 50ms per character (faster erase)
-    });
-}
-
-async function cycleWords() {
-    while (true) {
-        // Wait 3 seconds before starting to erase
-        await new Promise(resolve => setTimeout(resolve, 3000));
-
-        // Erase current word
-        await eraseWord();
-
-        // Move to next word
-        currentIndex = (currentIndex + 1) % words.length;
-
-        // Wait a bit before typing new word
-        await new Promise(resolve => setTimeout(resolve, 200));
-
-        // Type new word
-        await typeWord(words[currentIndex]);
+                if (charIndex === word.length) {
+                    clearInterval(typeInterval);
+                    resolve();
+                }
+            }, 100);
+        });
     }
-}
 
-// Start the cycle after page load
-setTimeout(() => {
-    cycleWords();
-}, 3000);
+    function eraseWord() {
+        return new Promise((resolve) => {
+            let currentText = words[currentIndex];
+
+            const eraseInterval = setInterval(() => {
+                currentText = currentText.slice(0, -1);
+                cyclingTextElement.innerHTML = currentText + '<span class="cursor">|</span>';
+
+                if (currentText === '') {
+                    clearInterval(eraseInterval);
+                    resolve();
+                }
+            }, 50);
+        });
+    }
+
+    async function cycleWords() {
+        while (true) {
+            await new Promise(resolve => setTimeout(resolve, 3000));
+            await eraseWord();
+            currentIndex = (currentIndex + 1) % words.length;
+            await new Promise(resolve => setTimeout(resolve, 200));
+            await typeWord(words[currentIndex]);
+        }
+    }
+
+    // Start after delay
+    setTimeout(() => {
+        typeWord(words[currentIndex]).then(cycleWords);
+    }, 1000);
+});

@@ -1,0 +1,225 @@
+.project-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px;
+}
+
+/* Header Section */
+.project-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.project-main-title {
+    font-size: 48px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 16px;
+}
+
+.project-main-title .project-highlight {
+    color: #FFD700;
+}
+
+.project-subtitle {
+    font-size: 18px;
+    color: #666;
+    font-weight: 400;
+}
+
+/* Cards Grid */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-bottom: 80px;
+}
+
+.project-card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+.project-image-container {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-tag {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: #FFD700;
+    color: #000;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.project-card-content {
+    padding: 24px;
+}
+
+.project-card-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 8px;
+}
+
+.project-card-description {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 16px;
+}
+
+.project-delivery-info {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 16px;
+}
+
+.project-delivery-info::before {
+    content: "📅";
+    margin-right: 6px;
+}
+
+.project-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.project-feature-tag {
+    background: #f5f5f5;
+    color: #666;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.project-testimonial {
+    background: #f8f9fa;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    color: #555;
+    font-style: italic;
+    margin-bottom: 20px;
+    border-left: 3px solid #FFD700;
+}
+
+.project-visit-btn {
+    display: block;
+    width: 100%;
+    background: #000;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.project-visit-btn:hover {
+    background: #333;
+}
+
+/* Stats Section */
+.project-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background: #FFF9E6;
+    border-radius: 16px;
+    padding: 48px 24px;
+    margin-bottom: 48px;
+}
+
+.project-stat-item {
+    text-align: center;
+}
+
+.project-stat-number {
+    font-size: 48px;
+    font-weight: 700;
+    color: #000;
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.project-stat-label {
+    font-size: 16px;
+    color: #666;
+    font-weight: 500;
+}
+
+/* CTA Section */
+.project-cta {
+    text-align: center;
+}
+
+.project-cta-button {
+    display: inline-block;
+    background: #FFD700;
+    color: #000;
+    text-decoration: none;
+    padding: 16px 32px;
+    border-radius: 32px;
+    font-size: 16px;
+    font-weight: 700;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(255, 215, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .project-container {
+        padding: 40px 16px;
+    }
+
+    .project-main-title {
+        font-size: 32px;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .project-stats {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 32px 16px;
+    }
+
+    .project-stat-number {
+        font-size: 36px;
+    }
+}
