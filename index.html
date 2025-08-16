@@ -33,7 +33,7 @@
                 <a href="#about">About</a>
                 <a href="#contact">Contact</a>
             </nav>
-            <a href="#start" class="cta-button">Let's Build Yours</a>
+            <a href="#contact" class="cta-button">Let's Build Yours</a>
         </header>
 
         <main class="main-content" id="home">
@@ -50,10 +50,10 @@
                         worden.</p>
                 </div>
                 <div class="action-buttons">
-                    <a href="#start" class="primary-btn">
+                    <a href="#contact" class="primary-btn">
                         Vraag jouw website aan 🚀
                     </a>
-                    <a href="#portfolio" class="secondary-btn">
+                    <a href="#work" class="secondary-btn">
                         Bekijk voorbeelden
                     </a>
                 </div>
@@ -86,7 +86,8 @@
         </main>
 
     </div>
-    <section class="over-mij-section">
+
+    <section class="over-mij-section" id="about">
         <!-- Header -->
         <div class="over-mij-header">
             <h1 class="over-mij-title">Waarom <span class="yellow">met mij werken?</span></h1>
@@ -143,7 +144,7 @@
         <a href="#contact" class="over-mij-button">Klaar om te starten? Neem contact op!</a>
     </section>
 
-    <section class="project-container">
+    <section class="project-container" id="work">
         <!-- Header -->
         <div class="project-header">
             <h1 class="project-main-title">My Client <span class="project-highlight">Projects</span></h1>
@@ -172,7 +173,7 @@
                     <div class="project-testimonial">
                         "Sales increased 40% after launch! 🚀"
                     </div>
-                    <a href="#" class="project-visit-btn">Visit Live Site ↗</a>
+                    <a href="#contact" class="project-visit-btn">Get Started ↗</a>
                 </div>
             </div>
 
@@ -194,7 +195,7 @@
                     <div class="project-testimonial">
                         "My clients love the new booking system! 💯"
                     </div>
-                    <a href="#" class="project-visit-btn">Visit Live Site ↗</a>
+                    <a href="#contact" class="project-visit-btn">Get Started ↗</a>
                 </div>
             </div>
 
@@ -216,7 +217,7 @@
                     <div class="project-testimonial">
                         "From no online presence to 30+ daily orders! 🎯"
                     </div>
-                    <a href="#" class="project-visit-btn">Visit Live Site ↗</a>
+                    <a href="#contact" class="project-visit-btn">Get Started ↗</a>
                 </div>
             </div>
         </div>
@@ -239,11 +240,11 @@
 
         <!-- CTA Button -->
         <div class="project-cta">
-            <a href="#" class="project-cta-button">Ready for Your Transformation? Let's Chat! 👋</a>
+            <a href="#contact" class="project-cta-button">Ready for Your Transformation? Let's Chat! 👋</a>
         </div>
     </section>
 
-    <section class="services-container">
+    <section class="services-container" id="services">
         <!-- Header -->
         <div class="services-header">
             <h1 class="services-main-title">Website pakketten <span class="services-highlight">voor zelfstandigen</span>
@@ -269,11 +270,11 @@
                     <li class="services-feature">Op maat gemaakt ontwerp – geen standaard template</li>
                     <li class="services-feature">Secties: Home, Over ons, Diensten, Contact</li>
                     <li class="services-feature">Responsive design, basic SEO</li>
-                    <li class="services-feature">Oplevering binnen ± 5 werkdagen</li>
+                    <li class="services-feature">Oplevering binnen ± 5 werkdagen</li>
                     <li class="services-feature">1 kleine correctieronde inbegrepen</li>
                     <li class="services-feature">Extra aanpassingen: €35/uur</li>
                 </ul>
-                <button class="services-button">Kies dit pakket</button>
+                <a href="#contact" class="services-button">Kies dit pakket</a>
             </div>
 
             <!-- Standaard Website -->
@@ -293,7 +294,7 @@
                     <li class="services-feature">Oplevering binnen 1 week</li>
                     <li class="services-feature">1 correctieronde inbegrepen (extra: €35/uur)</li>
                 </ul>
-                <button class="services-button">Kies dit pakket</button>
+                <a href="#contact" class="services-button">Kies dit pakket</a>
             </div>
 
             <!-- Premium Website -->
@@ -301,18 +302,18 @@
                 <h3 class="services-card-title">Premium Website</h3>
                 <div class="services-card-price">€650</div>
                 <p class="services-card-description">
-                    Meer maatwerk, extra functies en uitgebreide ondersteuning – voor wie alles uit z’n website wil
+                    Meer maatwerk, extra functies en uitgebreide ondersteuning – voor wie alles uit z'n website wil
                     halen.
                 </p>
                 <ul class="services-features">
                     <li class="services-feature">Gebouwd in WordPress (CMS inbegrepen)</li>
                     <li class="services-feature">Op maat gemaakt ontwerp – geen standaard template</li>
-                    <li class="services-feature">Alles uit Standaard + extra pagina’s of secties</li>
+                    <li class="services-feature">Alles uit Standaard + extra pagina's of secties</li>
                     <li class="services-feature">Maatwerk: reviews, galerij, meertaligheid</li>
                     <li class="services-feature">Extra correctierondes en persoonlijke begeleiding</li>
                     <li class="services-feature">Hosting + domeinnaam optioneel (€30–60/jaar)</li>
                 </ul>
-                <button class="services-button">Kies dit pakket</button>
+                <a href="#contact" class="services-button">Kies dit pakket</a>
             </div>
         </div>
 
@@ -323,7 +324,7 @@
         </div>
     </section>
 
-    <section class="contact-info-section">
+    <section class="contact-info-section" id="contact">
         <div class="contact-info-container">
             <!-- Linkerkant - Contactformulier -->
             <div class="contact-info-form-container">
@@ -349,6 +350,17 @@
                     </div>
 
                     <div class="contact-info-form-group">
+                        <label for="package" class="contact-info-form-label">Welk pakket interesseert je?</label>
+                        <select id="package" name="package" class="contact-info-form-input">
+                            <option value="">Kies een pakket</option>
+                            <option value="starter">Starter Website - €250</option>
+                            <option value="standaard">Standaard Website - €400 (Meest gekozen)</option>
+                            <option value="premium">Premium Website - €650</option>
+                            <option value="custom">Maatwerk / Ik weet het nog niet</option>
+                        </select>
+                    </div>
+
+                    <div class="contact-info-form-group">
                         <label for="message" class="contact-info-form-label">Projectdetails</label>
                         <textarea id="message" name="message" class="contact-info-form-textarea"
                             placeholder="Vertel me iets meer over je project, doelen en timing..." required></textarea>
@@ -363,7 +375,8 @@
                 <h1 class="contact-info-title">Gemaakt door <span class="contact-info-name">Hassanain</span></h1>
 
                 <p class="contact-info-intro">
-                    Hey! Ik ben <strong>Hassanain</strong>, een student met een passie voor het bouwen van moderne websites
+                    Hey! Ik ben <strong>Hassanain</strong>, een student met een passie voor het bouwen van moderne
+                    websites
                     op maat.
                     Terwijl anderen studeren voor hun examens, help ik lokale ondernemers om online sterker te staan.
                 </p>
@@ -384,7 +397,23 @@
                 <div class="contact-info-promise">
                     <div class="contact-info-promise-label">Mijn belofte:</div>
                     <div class="contact-info-promise-text">
-                        “Jouw succes is mijn succes. Ik stop niet tot jouw website écht goed aanvoelt voor jouw zaak.”
+                        "Jouw succes is mijn succes. Ik stop niet tot jouw website écht goed aanvoelt voor jouw zaak."
+                    </div>
+                </div>
+
+                <!-- Quick contact info -->
+                <div class="contact-quick-info">
+                    <div class="contact-item">
+                        <span class="contact-icon">✉</span>
+                        <span class="contact-text">jonas@webglowbelgium.be</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📞</span>
+                        <span class="contact-text">+32 123 456 789</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <span class="contact-text">Belgium</span>
                     </div>
                 </div>
             </div>
@@ -405,11 +434,10 @@
                 <h3 class="section-title">Quick Links</h3>
                 <ul class="quick-links">
                     <li><a href="#home">Home</a></li>
+                    <li><a href="#work">Work</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><a href="#privacy-policy">Privacy Policy</a></li>
-                    <li><a href="#cookies">Cookies</a></li>
                 </ul>
             </div>
 
@@ -433,6 +461,9 @@
             </div>
         </div>
     </footer>
+    <button class="back-to-top" id="backToTop" aria-label="Back to top"></button>
+
+    <script src="js/arrowBackToTop.js"></script>
     <script src="js/nav.js"></script>
     <script src="js/hero-tekst.js"></script>
     <script src="js/over-mij-animatie.js"></script>
