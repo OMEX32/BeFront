@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const nav = document.querySelector('.nav');
 
     if (menuToggle && nav) {
+        // Toggle menu
         menuToggle.addEventListener('click', () => {
             const isActive = nav.classList.contains('active');
             nav.classList.toggle('active');
@@ -15,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     item.style.opacity = '0';
                     item.style.transform = 'translateX(30px) scale(0.9)';
                     setTimeout(() => {
-                        item.style.transition = 'all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1)';
+                        item.style.transition = 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
                         item.style.opacity = '1';
                         item.style.transform = 'translateX(0) scale(1)';
                     }, index * 80 + 200);
@@ -23,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Close when clicking outside
+        // Close menu when clicking outside
         document.addEventListener('click', (e) => {
             if (!nav.contains(e.target) && !menuToggle.contains(e.target) && nav.classList.contains('active')) {
                 nav.classList.remove('active');
@@ -32,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Close when clicking link
+        // Close menu when clicking a link
         nav.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 nav.classList.remove('active');
@@ -42,22 +43,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Smooth scrolling
+    // Smooth scrolling for internal links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            e.preventDefault();
             const targetId = this.getAttribute('href');
             const target = document.querySelector(targetId);
             if (target) {
+                e.preventDefault();
                 target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                if (targetId !== '#') {
-                    history.pushState(null, null, targetId);
-                }
+                if (targetId !== '#') history.pushState(null, null, targetId);
             }
         });
     });
 
-    // Content bars interaction
+    // Content bar interaction
     document.querySelectorAll('.content-bar').forEach(bar => {
         const activate = () => {
             bar.style.transform = 'scaleX(1.1)';
@@ -66,19 +65,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const reset = () => {
             bar.style.transform = 'scaleX(1)';
         };
-
-        bar.addEventListener('mouseenter', activate);
-        bar.addEventListener('mouseleave', reset);
-        bar.addEventListener('touchstart', activate);
-        bar.addEventListener('touchend', reset);
+        ['mouseenter', 'touchstart'].forEach(evt => bar.addEventListener(evt, activate));
+        ['mouseleave', 'touchend'].forEach(evt => bar.addEventListener(evt, reset));
     });
 
     // Entrance animations
-    const animatedObserverOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
+    const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
     const animatedObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -86,16 +78,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 entry.target.style.transform = 'translateY(0)';
             }
         });
-    }, animatedObserverOptions);
+    }, observerOptions);
 
     const elements = document.querySelectorAll('.content-left > *, .laptop-container');
     elements.forEach((el, index) => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
         el.style.transition = `all 0.6s ease ${index * 0.1}s`;
-        setTimeout(() => {
-            animatedObserver.observe(el);
-        }, 100);
+        setTimeout(() => animatedObserver.observe(el), 100);
     });
 
     // Interactive laptop screen
@@ -111,17 +101,10 @@ document.addEventListener('DOMContentLoaded', () => {
         ];
 
         screenContent.addEventListener('click', () => {
-            const bars = screenContent.querySelectorAll('.content-bar:not(.bar-gray)');
             colorIndex = (colorIndex + 1) % colors.length;
-
-            bars.forEach(bar => {
-                bar.style.background = colors[colorIndex];
-            });
-
+            screenContent.querySelectorAll('.content-bar:not(.bar-gray)').forEach(bar => bar.style.background = colors[colorIndex]);
             const block = screenContent.querySelector('.content-block');
-            if (block) {
-                block.style.background = colors[colorIndex];
-            }
+            if (block) block.style.background = colors[colorIndex];
         });
     }
 
@@ -137,8 +120,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Disable animations on low-end devices
     if (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 2) {
-        document.querySelectorAll('*').forEach(el => {
-            el.style.animation = 'none';
+        document.querySelectorAll('*').forEach(el => el.style.animation = 'none');
+    }
+
+    // Back to Top button
+    const backToTopButton = document.getElementById('backToTop');
+    if (backToTopButton) {
+        window.addEventListener('scroll', () => {
+            backToTopButton.classList.toggle('visible', window.pageYOffset > 300);
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
 });
